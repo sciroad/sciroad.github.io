@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehmet Enes Kaplan</title>
+    <meta name="description" content="PhD applicant researching modular architectures for multilingual NLP">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #faf9f7;
+            --text: #1a1a1a;
+            --text-muted: #5c5c5c;
+            --accent: #2d5a4a;
+            --accent-light: #e8f0ed;
+            --border: #e5e3df;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 80px 0 60px;
+            text-align: center;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 28px;
+            border: 3px solid var(--card-bg);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2.8rem;
+            font-weight: 400;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 24px;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            background: var(--accent-light);
+            transition: all 0.2s ease;
+        }
+
+        .links a:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 0;
+            border-top: 1px solid var(--border);
+            animation: fadeInUp 0.6s ease;
+        }
+
+        h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* About */
+        .highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Research Interests */
+        .interests {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .interest-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .interest-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .interest-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 28px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Publications */
+        .publication {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .publication-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .publication-venue {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header {
+                padding: 60px 0 40px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="profile.jpg" alt="Mehmet Enes Kaplan" class="profile-img">
+            <h1>Mehmet Enes Kaplan</h1>
+            <p class="tagline">PhD Applicant · Multilingual NLP · Modular Architectures</p>
+            <div class="links">
+                <a href="mailto:m.enes.kaplan0@gmail.com">Email</a>
+                <a href="https://github.com/sciroad" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/mehmeteneskaplan" target="_blank">LinkedIn</a>
+                <a href="cv.pdf" target="_blank">CV</a>
+            </div>
+        </header>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>
+                I'm a Computer Science MSc graduate from <span class="highlight">Yıldız Technical University</span> and a recipient of the <span class="highlight">YLSY Scholarship</span>, Turkey's most prestigious award for doctoral study abroad. I'm currently applying to PhD programs in the US.
+            </p>
+            <p>
+                My research philosophy centers on a simple premise: <em>intelligent coordination among specialized components outperforms monolithic scale</em>. I believe effective AI systems should emerge from modular, reusable parts.
+            </p>
+        </section>
+
+        <section id="interests">
+            <h2>Research Interests</h2>
+            <div class="interests">
+                <div class="interest-item">
+                    <h3>Modular Architectures</h3>
+                    <p>Adapters, LoRA, and compositional approaches for efficient adaptation</p>
+                </div>
+                <div class="interest-item">
+                    <h3>Multilingual NLP</h3>
+                    <p>Extending models to low-resource languages without extensive retraining</p>
+                </div>
+                <div class="interest-item">
+                    <h3>Continual Learning</h3>
+                    <p>Acquiring new capabilities while preserving existing knowledge</p>
+                </div>
+                <div class="interest-item">
+                    <h3>Cross-lingual Transfer</h3>
+                    <p>Zero-shot generalization across languages and tasks</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline">
+            <h2>Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">April 2025</div>
+                    <div class="timeline-title">Paper Published</div>
+                    <p class="timeline-desc">11th International Aegean Congress on Innovation Technologies & Engineering</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">January 2025</div>
+                    <div class="timeline-title">YLSY Scholarship Awarded</div>
+                    <p class="timeline-desc">Turkish Ministry of National Education — PhD funding for 4 years abroad</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-title">MSc Completed</div>
+                    <p class="timeline-desc">Yıldız Technical University — GPA: 3.93/4.00</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-title">Two National Awards</div>
+                    <p class="timeline-desc">Genç Beyinler Yeni Fikirler thesis competition</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-title">BSc Completed</div>
+                    <p class="timeline-desc">Ege University — Computer Science & Engineering</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            <div class="publication">
+                <div class="publication-title">Symbolic Music Generation Using Latent Representations of a VAE</div>
+                <p class="publication-venue">11th International Aegean Congress on Innovation Technologies & Engineering, April 2025</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Gebze, Turkey · <a href="mailto:m.enes.kaplan0@gmail.com">m.enes.kaplan0@gmail.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>
